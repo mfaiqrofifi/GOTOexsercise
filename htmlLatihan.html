@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input{
+            margin: 30px 10px;
+        }
+        /* .input input{
+            margin-bottom: 30px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="formulir">
+        <div class="input">
+        <label for="email">Email</label><br>
+        <input type="text" id="email" required><br>
+        <p id="reaction"></p>
+        </div>
+        <div class="input">
+        <label for="password">Password</label><br>
+        <input type="password" id="password" required><br>
+        <p id="reaction1"></p>
+        </div>
+        <input type="submit" id="submit">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('email').addEventListener('input',function(){
+                const email=document.getElementById('email').value;
+                const reaction=document.getElementById('reaction');
+                const validEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!validEmail.test(email)){
+                    reaction.innerText='email formatnya salah'
+                }else{
+                    reaction.innerText='email sudah tepat';
+                }
+            })
+            document.getElementById('password').addEventListener('input',function(){
+                const pw=document.getElementById('password').value;
+                const reactions=document.getElementById('reaction1');
+                if(pw.length<6){
+                    reactions.innerText='password kurang panjang'
+                }else{
+                    reactions.innerText='email sudah tepat';
+                }
+            })
+        })
+    </script>
+</body>
+</html>

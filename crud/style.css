@@ -1,0 +1,15 @@
+.Posts{
+    float: left;
+    /* display: inline-block; */
+    margin: 20px;
+}
+.form{
+    float: left;
+}
+.trash{
+    margin-left: 50px;
+    display: inline-block;
+}
+.notifikasi{
+    visibility: hidden;
+}
